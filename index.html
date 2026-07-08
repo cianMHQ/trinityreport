@@ -139,6 +139,31 @@
   .section-head .note{font-size:12.5px;color:var(--ink-soft);}
 
   /* ---- Coverage cards ---- */
+  .articles-shelf{
+    background:transparent;
+  }
+  .articles-shelf summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--blue);
+    background:var(--tint);
+    border:1px solid #C9E1F3;
+    border-radius:10px;
+    padding:12px 16px;
+    margin-bottom:10px;
+    user-select:none;
+  }
+  .articles-shelf summary::-webkit-details-marker{display:none;}
+  .articles-shelf summary .chev{
+    transition:transform 0.15s;
+    display:inline-block;
+  }
+  .articles-shelf[open] summary .chev{transform:rotate(90deg);}
   .articles{display:flex;flex-direction:column;gap:10px;}
   .article{
     background:var(--card);
@@ -149,7 +174,16 @@
     grid-template-columns:28px 1fr auto;
     align-items:center;
     gap:14px;
+    text-decoration:none;
+    color:inherit;
+    transition:box-shadow 0.15s, border-color 0.15s;
+    cursor:pointer;
   }
+  .article:hover, .article:focus{
+    box-shadow:0 2px 10px rgba(11,37,69,0.10);
+    border-color:var(--blue-bright);
+  }
+  .article:visited{color:inherit;}
   .article .rank{
     font-family:'Inter',sans-serif;
     font-size:13px;
@@ -340,6 +374,11 @@
     <div class="stat">
       <div class="num">28</div>
       <div class="label">Pieces of direct coverage</div>
+      <div class="reach-mix">
+        <span style="width:54%;background:var(--navy-deep);" title="Regional 54%"></span>
+        <span style="width:39%;background:var(--blue-bright);" title="National 39%"></span>
+        <span style="width:7%;background:#9AA1AC;" title="International 7%"></span>
+      </div>
       <div class="sub">54% regional · 39% national · 7% international</div>
     </div>
     <div class="stat">
@@ -348,20 +387,21 @@
       <div class="sub">Across direct coverage (est.)</div>
     </div>
     <div class="stat">
-      <div class="num">28%</div>
-      <div class="label">Of delivered contacts opened</div>
-      <div class="sub">55 of 195 contacts</div>
+      <div class="num">46%</div>
+      <div class="label">Average key message pull-through</div>
+      <div class="sub">Across direct coverage</div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-head">
       <h2>Direct coverage</h2>
-      <div class="note">29 articles listed · 28 within the 7-day tracking window</div>
     </div>
+    <details class="articles-shelf" open>
+      <summary><span class="chev">▸</span> 29 articles</summary>
     <div class="articles">
 
-      <div class="article">
+      <a class="article" href="https://www.letterkennylive.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">1</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -371,9 +411,9 @@
           ~80K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.inishlive.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">2</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -383,9 +423,9 @@
           ~60K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.nenaghlive.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">3</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -395,9 +435,9 @@
           ~75K/mo site
           <span class="kmp">Key message <b>30%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.dundalkdemocrat.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">4</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -407,9 +447,9 @@
           ~200K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.offalyexpress.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">5</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -419,9 +459,9 @@
           ~100K/mo site
           <span class="kmp">Key message <b>30%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.leitrimobserver.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">6</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -431,9 +471,9 @@
           ~65K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.clarelive.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">7</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -443,9 +483,9 @@
           ~150K/mo site
           <span class="kmp">Key message <b>30%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.ireland-live.ie/news/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8707803" target="_blank" rel="noopener">
         <div class="rank">8</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -455,9 +495,9 @@
           ~1.5M/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.kilkennypeople.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">9</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -467,9 +507,9 @@
           ~180K/mo site
           <span class="kmp">Key message <b>30%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.donegallive.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">10</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -479,9 +519,9 @@
           ~250K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.tipperarylive.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">11</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -491,9 +531,9 @@
           ~150K/mo site
           <span class="kmp">Key message <b>30%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.longfordleader.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">12</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -503,9 +543,9 @@
           ~90K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.leinsterleader.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">13</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -515,9 +555,9 @@
           ~150K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.waterfordlive.ie/national/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8739914" target="_blank" rel="noopener">
         <div class="rank">14</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -527,9 +567,9 @@
           ~160K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.dailymail.com/wires/pa/article-15897501/Mark-Carney-pays-tribute-John-De-Chastelain-Dublin-lecture.html" target="_blank" rel="noopener">
         <div class="rank">15</div>
         <div>
           <div class="title">Mark Carney pays tribute to John De Chastelain in Dublin lecture</div>
@@ -539,9 +579,9 @@
           ~80M/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.laois-nationalist.ie/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture_arid-101590.html" target="_blank" rel="noopener">
         <div class="rank">16</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -551,9 +591,9 @@
           ~80K/mo site
           <span class="kmp">Key message <b>56%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.kildare-nationalist.ie/news/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture_arid-101590.html" target="_blank" rel="noopener">
         <div class="rank">17</div>
         <div>
           <div class="title">Mark Carney pays tribute to John De Chastelain in Dublin lecture</div>
@@ -563,9 +603,9 @@
           ~30K/mo site
           <span class="kmp">Key message <b>46%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.newsletter.co.uk/news/politics/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-8707878" target="_blank" rel="noopener">
         <div class="rank">18</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -575,9 +615,9 @@
           ~400K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.echolive.ie/nationalnews/arid-41862126.html" target="_blank" rel="noopener">
         <div class="rank">19</div>
         <div>
           <div class="title">Mark Carney visits Trinity College Dublin</div>
@@ -587,9 +627,9 @@
           ~450K/mo site
           <span class="kmp">Key message <b>57%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.independent.ie/irish-news/politics/conal-thomas-carney-sells-anti-trump-message-to-dublin-as-canadian-technocrat-kicks-off-two-day-visit/a/157160353.html" target="_blank" rel="noopener">
         <div class="rank">20</div>
         <div>
           <div class="title">Carney sells anti-Trump message to Dublin as Canadian technocrat kicks off two-day visit</div>
@@ -599,9 +639,9 @@
           ~13M/mo site
           <span class="kmp">Key message <b>48%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.belfasttelegraph.co.uk/news/republic-of-ireland/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture/a/157154425.html" target="_blank" rel="noopener">
         <div class="rank">21</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -611,9 +651,9 @@
           ~3.5M/mo site
           <span class="kmp">Key message <b>31%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.rte.ie/news/ireland/2026/0614/1578314-dechastelain-carney/" target="_blank" rel="noopener">
         <div class="rank">22</div>
         <div>
           <div class="title">Carney pays tribute to General de Chastelain in Dublin</div>
@@ -623,9 +663,9 @@
           ~83M/mo site
           <span class="kmp">Key message <b>30%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.irishnews.com/news/northern-ireland/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture-B37GRHQMDVMHPEGCTATOKKTSF4/" target="_blank" rel="noopener">
         <div class="rank">23</div>
         <div>
           <div class="title">Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -635,9 +675,9 @@
           ~550K/mo site
           <span class="kmp">Key message <b>30%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.itv.com/news/utv/2026-06-14/canadian-pm-pays-tribute-to-general-who-helped-forge-ni-peace-process" target="_blank" rel="noopener">
         <div class="rank">24</div>
         <div>
           <div class="title">Canadian Prime Minister Mark Carney pays tribute to John de Chastelain in Dublin lecture</div>
@@ -647,9 +687,9 @@
           ~44M/mo site
           <span class="kmp">Key message <b>32%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.rte.ie/news/ireland/2026/0614/1578314-dechastelain-carney/" target="_blank" rel="noopener">
         <div class="rank">25</div>
         <div>
           <div class="title">Carney pays tribute to General de Chastelain in Dublin</div>
@@ -659,21 +699,21 @@
           ~83M/mo site
           <span class="kmp">Key message <b>30%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.bbc.com/news/articles/cx2xpv8v7v9o" target="_blank" rel="noopener">
         <div class="rank">26</div>
         <div>
           <div class="title">Mark Carney pays tribute to General who helped forge NI peace process</div>
-          <div class="outlet-row"><span>BBC News Groups</span><span>·</span><span>14 Jun</span><span>·</span><span>3,769,723 article reads</span><span class="flag">Online · UK</span></div>
+          <div class="outlet-row"><span>BBC News Groups</span><span>·</span><span>14 Jun</span><span>·</span><span>500,000 article reads</span><span class="flag">Online · UK</span></div>
         </div>
         <div class="metrics">
           ~100M/mo site
           <span class="kmp">Key message <b>n/a</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.travelextra.ie/fastest-groiwng-ina-ound-market-tourism-ireland-joins-welcome-for-canadian-pm-mark-carney/" target="_blank" rel="noopener">
         <div class="rank">27</div>
         <div>
           <div class="title">Fastest growing inbound market: Tourism Ireland joins welcome for Canadian PM</div>
@@ -683,9 +723,9 @@
           ~100K/mo site
           <span class="kmp">Key message <b>46%</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.irishtimes.com/politics/2026/06/13/mark-carney-pays-tribute-to-john-de-chastelain-in-dublin-lecture/" target="_blank" rel="noopener">
         <div class="rank">28</div>
         <div>
           <div class="title">Mark Carney pays tribute to John De Chastelain in Dublin lecture</div>
@@ -695,9 +735,9 @@
           ~8.5M/mo site
           <span class="kmp">Key message <b>n/a</b></span>
         </div>
-      </div>
+      </a>
 
-      <div class="article">
+      <a class="article" href="https://www.irishtimes.com/politics/2026/06/14/canadian-prime-minister-mark-carney-returns-home-to-co-mayo/" target="_blank" rel="noopener">
         <div class="rank">29</div>
         <div>
           <div class="title">Canadian prime minister Mark Carney to return ‘home’ to Co Mayo</div>
@@ -707,18 +747,19 @@
           ~8.5M/mo site
           <span class="kmp">Key message <b>n/a</b></span>
         </div>
-      </div>
+      </a>
     </div>
+    </details>
   </div>
 
   <div class="section">
     <div class="section-head">
       <h2>Coverage velocity</h2>
-      <div class="note">Cumulative pickup since distribution</div>
+      <div class="note">Coverage landed per period, not cumulative</div>
     </div>
     <div class="chart-card">
       <div class="chart-wrap">
-        <canvas id="velocityChart" role="img" aria-label="Line chart of cumulative coverage percentage over time after release: 29% at 12 hours, 75% by one day, and reaching 100% after 6 days."></canvas>
+        <canvas id="velocityChart" role="img" aria-label="Bar chart of coverage landed per period after release, peaking at 46% within the first day then tapering off over the following week."></canvas>
       </div>
       <div class="insight">
         <span>⚡</span>
@@ -809,19 +850,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
 new Chart(document.getElementById('velocityChart'), {
-  type: 'line',
+  type: 'bar',
   data: {
     labels: ['3h','6h','12h','1d','2d','3d','4d','5d','6d','7d'],
     datasets: [{
-      label: 'Cumulative coverage',
-      data: [7,18,29,75,89,93,96,96,100,100],
-      borderColor: '#0B2545',
-      backgroundColor: 'rgba(14,115,185,0.12)',
-      fill: true,
-      tension: 0.35,
-      pointRadius: 3,
-      pointBackgroundColor: '#0E73B9',
-      borderWidth: 2.5
+      label: 'Coverage landed',
+      data: [7,11,11,46,14,4,3,0,4,0],
+      backgroundColor: '#1C93DE',
+      borderRadius: 4,
+      maxBarThickness: 40
     }]
   },
   options: {
@@ -829,7 +866,7 @@ new Chart(document.getElementById('velocityChart'), {
     maintainAspectRatio: false,
     plugins: { legend: { display: false } },
     scales: {
-      y: { min: 0, max: 100, ticks: { callback: v => v + '%', color: '#9AA1AC', font:{family:'Inter',size:11} }, grid: { color: '#EEF1F4' } },
+      y: { min: 0, max: 50, ticks: { callback: v => v + '%', color: '#9AA1AC', font:{family:'Inter',size:11} }, grid: { color: '#EEF1F4' } },
       x: { ticks: { color: '#9AA1AC', font:{family:'Inter',size:11} }, grid: { display: false } }
     }
   }
